@@ -4,10 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.barbershop.databinding.ActivityHomeBinding
 import com.example.barbershop.databinding.ServicosItemBinding
 import com.example.barbershop.model.Servicos
-import java.security.AccessControlContext
 
 class ServicosAdapter (private val context: Context, private val listaServicos: MutableList<Servicos>):
     RecyclerView.Adapter<ServicosAdapter.ServicosViewHolder>() {

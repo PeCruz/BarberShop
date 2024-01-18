@@ -51,6 +51,7 @@
         android:hint="Senha"
         android:background="@color/white"
         android:maxLines="1"
+        android:maxLength="6"
         android:inputType="numberPassword"
         android:layout_gravity="center"
         android:padding="15dp"

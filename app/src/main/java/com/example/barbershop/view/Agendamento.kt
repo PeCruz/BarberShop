@@ -28,24 +28,26 @@ class Agendamento : AppCompatActivity() {
         val nome = intent.extras?.getString("nome").toString()
 
         val datePicker = binding.datePicker
-        datePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
-            calendar.set(Calendar.YEAR, year)
-            calendar.set(Calendar.MONTH, monthOfYear)
-            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            datePicker.setOnDateChangedListener { _, year, monthOfYear, dayOfMonth ->
+                calendar.set(Calendar.YEAR, year)
+                calendar.set(Calendar.MONTH, monthOfYear)
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            var dia = dayOfMonth.toString()
-            val mes: String
+                var dia = dayOfMonth.toString()
+                val mes: String
 
-            if(dayOfMonth < 10) {
-                dia = "0$dayOfMonth"
+                if(dayOfMonth < 10) {
+                    dia = "0$dayOfMonth"
+                }
+                if (monthOfYear < 10){
+                    mes = "" + (monthOfYear+1)
+                } else {
+                    mes = (monthOfYear+1).toString()
+                }
+
+                data = "$dia / $mes / $year"
             }
-            if (monthOfYear < 10){
-                mes = "" + (monthOfYear+1)
-            } else {
-                mes = (monthOfYear+1).toString()
-            }
-
-            data = "$dia / $mes / $year"
         }
 
         binding.timePicker.setOnTimeChangedListener { _, hourOfDay, minute ->
