@@ -5,7 +5,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.annotation.RequiresApi
 import com.example.barbershop.databinding.ActivityAgendamentoBinding
 import com.google.android.material.snackbar.Snackbar
 import java.util.Calendar
@@ -17,7 +16,6 @@ class Agendamento : AppCompatActivity() {
     private var data: String = ""
     private var hora: String = ""
 
-    @RequiresApi(Build.VERSION_CODES.ECLAIR_0_1)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -96,7 +94,7 @@ class Agendamento : AppCompatActivity() {
         }
     }
 
-    private fun  mensagem(view: View, mensagem: String, cor: String) {
+    private fun mensagem(view: View, mensagem: String, cor: String) {
 
         val snackbar = Snackbar.make(view,mensagem,Snackbar.LENGTH_SHORT)
         snackbar.setBackgroundTint(Color.parseColor(cor))

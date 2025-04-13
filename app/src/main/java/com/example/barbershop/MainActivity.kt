@@ -2,12 +2,9 @@ package com.example.barbershop
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import com.example.barbershop.databinding.ActivityHomeBinding
 import com.example.barbershop.databinding.ActivityMainBinding
 import com.example.barbershop.view.Home
 import com.google.android.material.snackbar.Snackbar
